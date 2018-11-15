@@ -7,10 +7,9 @@ import glob from 'tiny-glob/sync';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import { rollup, watch } from 'rollup';
-import nodent from 'rollup-plugin-nodent';
 import commonjs from 'rollup-plugin-commonjs';
+import babel from 'rollup-plugin-babel';
 import nodeResolve from 'rollup-plugin-node-resolve';
-import buble from 'rollup-plugin-buble';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import alias from 'rollup-plugin-strict-alias';
@@ -97,8 +96,8 @@ export default async function microbundle(options) {
 				(await isFile(resolve(cwd, filename + '.ts')))
 					? '.ts'
 					: (await isFile(resolve(cwd, filename + '.tsx')))
-						? '.tsx'
-						: '.js'
+					? '.tsx'
+					: '.js'
 			}`,
 		);
 
@@ -108,9 +107,10 @@ export default async function microbundle(options) {
 			options.entries && options.entries.length
 				? options.entries
 				: (options.pkg.source && resolve(cwd, options.pkg.source)) ||
-				  ((await isDir(resolve(cwd, 'src'))) && (await jsOrTs('src/index'))) ||
-				  (await jsOrTs('index')) ||
-				  options.pkg.module,
+						((await isDir(resolve(cwd, 'src'))) &&
+							(await jsOrTs('src/index'))) ||
+						(await jsOrTs('index')) ||
+						options.pkg.module,
 		)
 		.map(file => glob(file))
 		.forEach(file => options.input.push(...file));
@@ -357,28 +357,10 @@ function createConfig(options, entry, format, writeMeta) {
 							},
 						}),
 					!useTypescript && flow({ all: true, pretty: true }),
-					nodent({
-						exclude: 'node_modules/**',
-						noRuntime: true,
-						promises: true,
-						transformations: {
-							forOf: false,
-						},
-						parser: {
-							plugins: {
-								jsx: true,
-							},
-						},
-					}),
+					// Only used for async await
 					!useTypescript &&
-						buble({
+						babel({
 							exclude: 'node_modules/**',
-							jsx: options.jsx || 'h',
-							objectAssign: options.assign || 'Object.assign',
-							transforms: {
-								dangerousForOf: true,
-								dangerousTaggedTemplateString: true,
-							},
 						}),
 					useNodeResolve &&
 						commonjs({
