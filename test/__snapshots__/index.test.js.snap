@@ -20,12 +20,12 @@ basic
 
 
 Build \\"basicLib\\" to dist:
-111 B: basic-lib.js.gz
-97 B: basic-lib.js.br
-110 B: basic-lib.mjs.gz
-90 B: basic-lib.mjs.br
-192 B: basic-lib.umd.js.gz
-148 B: basic-lib.umd.js.br"
+463 B: basic-lib.js.gz
+398 B: basic-lib.js.br
+461 B: basic-lib.mjs.gz
+398 B: basic-lib.mjs.br
+537 B: basic-lib.umd.js.gz
+464 B: basic-lib.umd.js.br"
 `;
 
 exports[`fixtures basic-css 1`] = `
@@ -49,12 +49,12 @@ basic-css
 
 
 Build \\"basicCss\\" to dist:
-110 B: basic-css.js.gz
-68 B: basic-css.js.br
-107 B: basic-css.mjs.gz
-69 B: basic-css.mjs.br
-187 B: basic-css.umd.js.gz
-131 B: basic-css.umd.js.br"
+107 B: basic-css.js.gz
+60 B: basic-css.js.br
+106 B: basic-css.mjs.gz
+56 B: basic-css.mjs.br
+188 B: basic-css.umd.js.gz
+135 B: basic-css.umd.js.br"
 `;
 
 exports[`fixtures basic-ts 1`] = `
@@ -139,12 +139,12 @@ basic-with-cwd
 
 
 Build \\"basic\\" to dist:
-111 B: basic.js.gz
-97 B: basic.js.br
-110 B: basic.mjs.gz
-90 B: basic.mjs.br
-188 B: basic.umd.js.gz
-142 B: basic.umd.js.br"
+463 B: basic.js.gz
+398 B: basic.js.br
+461 B: basic.mjs.gz
+398 B: basic.mjs.br
+533 B: basic.umd.js.gz
+463 B: basic.umd.js.br"
 `;
 
 exports[`fixtures custom-source 1`] = `
@@ -167,12 +167,12 @@ custom-source
 
 
 Build \\"customSource\\" to dist:
-111 B: custom-source.js.gz
-97 B: custom-source.js.br
-110 B: custom-source.mjs.gz
-90 B: custom-source.mjs.br
-194 B: custom-source.umd.js.gz
-144 B: custom-source.umd.js.br"
+463 B: custom-source.js.gz
+398 B: custom-source.js.br
+461 B: custom-source.mjs.gz
+398 B: custom-source.mjs.br
+539 B: custom-source.umd.js.gz
+458 B: custom-source.umd.js.br"
 `;
 
 exports[`fixtures custom-source-with-cwd 1`] = `
@@ -197,12 +197,12 @@ custom-source-with-cwd
 
 
 Build \\"customSrc\\" to dist:
-111 B: custom-src.js.gz
-97 B: custom-src.js.br
-110 B: custom-src.mjs.gz
-90 B: custom-src.mjs.br
-192 B: custom-src.umd.js.gz
-147 B: custom-src.umd.js.br"
+463 B: custom-src.js.gz
+398 B: custom-src.js.br
+461 B: custom-src.mjs.gz
+398 B: custom-src.mjs.br
+537 B: custom-src.umd.js.gz
+465 B: custom-src.umd.js.br"
 `;
 
 exports[`fixtures jsx 1`] = `
@@ -223,12 +223,12 @@ jsx
 
 
 Build \\"jsx\\" to dist:
-211 B: jsx.js.gz
-168 B: jsx.js.br
-212 B: jsx.mjs.gz
-170 B: jsx.mjs.br
-283 B: jsx.umd.js.gz
-230 B: jsx.umd.js.br"
+415 B: jsx.js.gz
+348 B: jsx.js.br
+416 B: jsx.mjs.gz
+347 B: jsx.mjs.br
+476 B: jsx.umd.js.gz
+401 B: jsx.umd.js.br"
 `;
 
 exports[`fixtures name-custom-amd 1`] = `
@@ -251,12 +251,12 @@ name-custom-amd
 
 
 Build \\"customNameAmd\\" to dist:
-111 B: name-custom-amd.js.gz
-97 B: name-custom-amd.js.br
-110 B: name-custom-amd.mjs.gz
-90 B: name-custom-amd.mjs.br
-196 B: name-custom-amd.umd.js.gz
-148 B: name-custom-amd.umd.js.br"
+463 B: name-custom-amd.js.gz
+398 B: name-custom-amd.js.br
+461 B: name-custom-amd.mjs.gz
+398 B: name-custom-amd.mjs.br
+541 B: name-custom-amd.umd.js.gz
+463 B: name-custom-amd.umd.js.br"
 `;
 
 exports[`fixtures name-custom-cli 1`] = `
@@ -279,12 +279,12 @@ name-custom-cli
 
 
 Build \\"nameCustomCli\\" to dist:
-111 B: name-custom.js.gz
-97 B: name-custom.js.br
-110 B: name-custom.mjs.gz
-90 B: name-custom.mjs.br
-195 B: name-custom.umd.js.gz
-150 B: name-custom.umd.js.br"
+463 B: name-custom.js.gz
+398 B: name-custom.js.br
+461 B: name-custom.mjs.gz
+398 B: name-custom.mjs.br
+542 B: name-custom.umd.js.gz
+464 B: name-custom.umd.js.br"
 `;
 
 exports[`fixtures no-pkg 1`] = `
@@ -306,12 +306,12 @@ no-pkg
 
 
 Build \\"noPkg\\" to dist:
-111 B: no-pkg.js.gz
-97 B: no-pkg.js.br
-110 B: no-pkg.mjs.gz
-90 B: no-pkg.mjs.br
-190 B: no-pkg.umd.js.gz
-147 B: no-pkg.umd.js.br"
+463 B: no-pkg.js.gz
+398 B: no-pkg.js.br
+461 B: no-pkg.mjs.gz
+398 B: no-pkg.mjs.br
+533 B: no-pkg.umd.js.gz
+457 B: no-pkg.umd.js.br"
 `;
 
 exports[`fixtures no-pkg-name 1`] = `
@@ -334,12 +334,12 @@ no-pkg-name
 
 
 Build \\"noPkgName\\" to dist:
-111 B: no-pkg-name.js.gz
-97 B: no-pkg-name.js.br
-110 B: no-pkg-name.mjs.gz
-90 B: no-pkg-name.mjs.br
-193 B: no-pkg-name.umd.js.gz
-149 B: no-pkg-name.umd.js.br"
+463 B: no-pkg-name.js.gz
+398 B: no-pkg-name.js.br
+461 B: no-pkg-name.mjs.gz
+398 B: no-pkg-name.mjs.br
+540 B: no-pkg-name.umd.js.gz
+469 B: no-pkg-name.umd.js.br"
 `;
 
 exports[`fixtures pretty 1`] = `
@@ -363,7 +363,7 @@ pretty
 Build \\"pretty\\" to dist:
 6.33 kB: pretty.js.gz
 5.19 kB: pretty.js.br
-6.35 kB: pretty.mjs.gz
+6.34 kB: pretty.mjs.gz
 5.21 kB: pretty.mjs.br
 6.46 kB: pretty.umd.js.gz
 5.3 kB: pretty.umd.js.br"
@@ -390,8 +390,8 @@ raw
 Build \\"raw\\" to dist:
 1389 B: raw.js.gz
 1160 B: raw.js.br
-1399 B: raw.mjs.gz
-1171 B: raw.mjs.br
+1398 B: raw.mjs.gz
+1169 B: raw.mjs.br
 1493 B: raw.umd.js.gz
 1245 B: raw.umd.js.br"
 `;

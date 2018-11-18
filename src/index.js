@@ -318,6 +318,12 @@ function createConfig(options, entry, format, writeMeta) {
 	}
 	loadNameCache();
 
+	let babelConfig = require('../babel.config');
+	let jsx = babelConfig.plugins.find(
+		def => Array.isArray(def) && def[0] === '@babel/plugin-transform-react-jsx',
+	)[1];
+	jsx.pragma = options.jsx || 'h';
+
 	let config = {
 		inputOptions: {
 			input: exportType ? resolve(__dirname, '../src/lib/__entry__.js') : entry,
@@ -361,7 +367,7 @@ function createConfig(options, entry, format, writeMeta) {
 					!useTypescript &&
 						babel({
 							exclude: 'node_modules/**',
-							...require('../babel.config'),
+							...babelConfig,
 						}),
 					useNodeResolve &&
 						commonjs({
