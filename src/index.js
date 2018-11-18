@@ -361,6 +361,7 @@ function createConfig(options, entry, format, writeMeta) {
 					!useTypescript &&
 						babel({
 							exclude: 'node_modules/**',
+							...require('../babel.config'),
 						}),
 					useNodeResolve &&
 						commonjs({

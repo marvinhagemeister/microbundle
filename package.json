@@ -42,6 +42,7 @@
   "author": "Jason Miller <jason@developit.ca> (http://jasonformat.com)",
   "license": "MIT",
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.1.6",
     "@babel/polyfill": "^7.0.0",
     "acorn": "^6.0.4",
     "acorn-jsx": "^5.0.0",
