@@ -1,4 +1,3 @@
-import 'acorn-jsx';
 import fs from 'fs';
 import { resolve, relative, dirname, basename, extname } from 'path';
 import chalk from 'chalk';
@@ -42,6 +41,16 @@ const parseGlobals = globalStrings => {
 const WATCH_OPTS = {
 	exclude: 'node_modules/**',
 };
+
+// Hoist function because something (rollup?) incorrectly removes it
+function formatSize(size, filename, type, raw) {
+	const pretty = raw ? `${size} B` : prettyBytes(size);
+	const color = size < 5000 ? 'green' : size > 40000 ? 'red' : 'yellow';
+	const MAGIC_INDENTATION = type === 'br' ? 13 : 10;
+	return `${' '.repeat(MAGIC_INDENTATION - pretty.length)}${chalk[color](
+		pretty,
+	)}: ${chalk.white(basename(filename))}.${type}`;
+}
 
 export default async function microbundle(options) {
 	let cwd = (options.cwd = resolve(process.cwd(), options.cwd)),
@@ -144,15 +153,6 @@ export default async function microbundle(options) {
 				createConfig(options, entries[i], formats[j], i === 0 && j === 0),
 			);
 		}
-	}
-
-	function formatSize(size, filename, type, raw) {
-		const pretty = raw ? `${size} B` : prettyBytes(size);
-		const color = size < 5000 ? 'green' : size > 40000 ? 'red' : 'yellow';
-		const MAGIC_INDENTATION = type === 'br' ? 13 : 10;
-		return `${' '.repeat(MAGIC_INDENTATION - pretty.length)}${chalk[color](
-			pretty,
-		)}: ${chalk.white(basename(filename))}.${type}`;
 	}
 
 	async function getSizeInfo(code, filename) {
@@ -363,12 +363,6 @@ function createConfig(options, entry, format, writeMeta) {
 							},
 						}),
 					!useTypescript && flow({ all: true, pretty: true }),
-					// Only used for async await
-					!useTypescript &&
-						babel({
-							exclude: 'node_modules/**',
-							...babelConfig,
-						}),
 					useNodeResolve &&
 						commonjs({
 							include: 'node_modules/**',
@@ -378,6 +372,12 @@ function createConfig(options, entry, format, writeMeta) {
 							module: true,
 							jsnext: true,
 							browser: options.target !== 'node',
+						}),
+					// Only used for async await
+					!useTypescript &&
+						babel({
+							exclude: 'node_modules/**',
+							...babelConfig,
 						}),
 					// We should upstream this to rollup
 					// format==='cjs' && replace({
